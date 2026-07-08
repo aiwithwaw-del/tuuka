@@ -10,7 +10,7 @@ class TuukaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fuuna',
+      title: 'Tuuka',
       debugShowCheckedModeBanner: false, // Faster
       theme: ThemeData(
         primarySwatch: Colors.blue,
