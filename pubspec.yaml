@@ -1,5 +1,5 @@
 name: tuuka
-description: "Join the challenge, get rewarded"
+description: "Join challenges, earn rewards"
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -13,6 +13,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
+  
+  # Tree shaking - removes unused code
+  # This makes APK smaller
