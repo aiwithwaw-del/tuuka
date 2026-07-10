@@ -10,9 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.2.2
-  intl: ^0.18.1
-  url_launcher: ^6.2.1
-  geolocator: ^10.1.0
 
 dev_dependencies:
   flutter_test:
