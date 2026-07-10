@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v4
 
@@ -18,12 +18,20 @@ jobs:
           channel: 'stable'
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          flutter clean
+          flutter pub get
 
-      - name: Generate Android files
-        run: flutter create .
+      - name: Create Android folder
+        run: |
+          rm -rf android
+          flutter create --platforms=android .
 
-      - name: Build APK (Simple)
+      - name: Update Kotlin version
+        run: |
+          sed -i 's/ext.kotlin_version = .*/ext.kotlin_version = '\''1.9.0'\''/g' android/build.gradle
+
+      - name: Build APK
         run: flutter build apk --release
 
       - name: Upload APK
