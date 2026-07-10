@@ -23,21 +23,11 @@ jobs:
       - name: Generate Android files
         run: flutter create .
 
-      - name: Build Optimized APK
-        run: |
-          flutter build apk --release \
-            --split-per-abi \
-            --tree-shake-icons \
-            --shrink
+      - name: Build APK (Simple)
+        run: flutter build apk --release
 
-      - name: Upload APK (Universal)
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: tuuka-app-universal
+          name: tuuka-app-release
           path: build/app/outputs/flutter-apk/app-release.apk
-          
-      - name: Upload APK (ARM64)
-        uses: actions/upload-artifact@v4
-        with:
-          name: tuuka-app-arm64
-          path: build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
