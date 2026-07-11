@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:math';
-import 'dart:io';
-import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 // ==================== 1. ADVANCED TRANSLATION (4 LANGUAGES) ====================
 class L10n {
